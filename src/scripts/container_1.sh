@@ -1,0 +1,10 @@
+docker run -d -e TAPLE_HTTPPORT=3004 \
+	-e TAPLE_NETWORK_ADDR=/ip4/0.0.0.0/tcp \
+	-e TAPLE_NETWORK_P2PPORT=40004 \
+	-e TAPLE_NODE_SECRETKEY=71a3844e1658cc630cc89b74fc3e9e730be8d7b352c4b8f88014ca9ba742e040 \
+	-e RUST_LOG=info \
+	-e TAPLE_NETWORK_KNOWNNODES=/ip4/172.17.0.5/tcp/40003/p2p/12D3KooWE8yWgnHS9vacxAeSwMvgwMRMggD72MEWtW4t1TL1XpFi \
+	-p 3004:3004 \
+	-p 40004:40004 \
+	--name="container_1" \
+	opencanarias/taple-client:0.1.4

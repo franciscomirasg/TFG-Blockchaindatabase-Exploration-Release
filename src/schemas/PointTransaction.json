@@ -1,0 +1,31 @@
+{
+	"type": "object",
+	"title": "PointTransaction",
+	"properties": {
+		"cuid": {
+			"type": "string",
+			"description": "Codigo de identificacion unico del ciudadano",
+			"minLength": 36,
+			"maxLength": 36
+		},
+		"value": {
+			"type": "integer",
+			"description": "Valor de la operacion"
+		},
+		"motivo": {
+			"type": "string",
+			"description": "Motivo de la operacion"
+		},
+		"balance": {
+			"type": "integer",
+			"description": "Balance actual de puntos",
+			"default": 0
+		}
+	},
+	"required": [
+		"cuid",
+		"value",
+		"motivo"
+	],
+	"additionalProperties": false
+}

@@ -1,0 +1,4 @@
+pydantic[dotenv] == 1.10.10
+requests
+rich
+leveldb

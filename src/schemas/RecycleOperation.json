@@ -1,0 +1,27 @@
+{
+	"type": "object",
+	"title": "RecycleOperation",
+	"properties": {
+		"type": {
+			"type": "string",
+			"description": "Tipo de residuo"
+		},
+		"peso": {
+			"type": "number",
+			"description": "Peso de los residuos, en gramos",
+			"exclusiveMinimum": 0
+		},
+		"container": {
+			"type": "string",
+			"description": "Id del contenedor",
+			"minLength": 36,
+			"maxLength": 36
+		}
+	},
+	"required": [
+		"type",
+		"peso",
+		"container"
+	],
+	"additionalProperties": false
+}

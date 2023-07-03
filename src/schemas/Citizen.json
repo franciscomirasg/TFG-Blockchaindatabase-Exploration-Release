@@ -1,0 +1,94 @@
+{
+	"definitions": {
+		"ViaType": {
+			"type": "string"
+		},
+		"Identidad": {
+			"type": "object",
+			"properties": {
+				"nombre": {
+					"type": "string",
+					"description": "Nombre del ciudadano"
+				},
+				"apellidos": {
+					"type": "string",
+					"description": "Primer apellido del ciudadano"
+				},
+				"ni": {
+					"type": "string",
+					"description": "DNI del ciudadano",
+					"minLength": 9,
+					"maxLength": 9
+				}
+			},
+			"required": [
+				"nombre",
+				"apellidos",
+				"ni"
+			],
+			"additionalProperties": false
+		},
+		"Direcion": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/ViaType",
+					"description": "Tipo de vía"
+				},
+				"direccion": {
+					"type": "string",
+					"description": "Dirección"
+				},
+				"codigo_postal": {
+					"type": "string",
+					"description": "Código Postal",
+					"minLength": 5,
+					"maxLength": 5
+				},
+				"comunidad": {
+					"type": "string",
+					"description": "Comunidad/Región/Provincia"
+				},
+				"ciudad": {
+					"type": "string",
+					"description": "Ciudad"
+				}
+			},
+			"required": [
+				"type",
+				"direccion",
+				"codigo_postal",
+				"comunidad",
+				"ciudad"
+			],
+			"additionalProperties": false
+		},
+		"Citizen": {
+			"type": "object",
+			"properties": {
+				"identidad": {
+					"$ref": "#/definitions/Identidad",
+					"description": "Identidad del ciudadano"
+				},
+				"direccion": {
+					"$ref": "#/definitions/Direcion",
+					"description": "Dirección del ciudadano"
+				},
+				"cuid": {
+					"type": "string",
+					"description": "Código de identificación único del ciudadano",
+					"minLength": 36,
+					"maxLength": 36,
+					"default": ""
+				}
+			},
+			"required": [
+				"identidad",
+				"direccion",
+				"cuid"
+			],
+			"additionalProperties": false
+		}
+	},
+	"$ref": "#/definitions/Citizen"
+}
