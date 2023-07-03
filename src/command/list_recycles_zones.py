@@ -1,6 +1,10 @@
 from typing import Any, List
+
+from rich import print
+
 from command.command import Command
 from interfaces.data_interfaces import SubjectMapList
+
 
 class ListRecycleZones(Command):
     """

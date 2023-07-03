@@ -1,4 +1,7 @@
 from typing import Any, List
+
+from rich import print
+
 from command.command import Command
 
 

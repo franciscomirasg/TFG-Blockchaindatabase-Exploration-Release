@@ -1,7 +1,10 @@
 from typing import Any, List
+
+from rich import print
+
 from command.command import Command
-from interfaces.data_interfaces import SubjectMapList
 from interfaces.citizen import Citizen
+from interfaces.data_interfaces import SubjectMapList
 
 
 class ListCitizens(Command):

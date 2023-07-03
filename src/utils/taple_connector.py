@@ -7,8 +7,6 @@ from interfaces.subject import Subject
 from interfaces.request import EventOut, EventIn
 from interfaces.approval import ApprovalResponse
 
-from rich import print
-
 class RestConnector:
     """
     Rest connector for TAPLE node
@@ -47,7 +45,6 @@ class RestConnector:
         url = f"{self.__base_url}{endpoint}"
         headers = {"x-api-key": self.__api_key,
                    'Accept': 'application/json', 'Content-Type': 'application/json'}
-        print(payload)
         response = requests.post(url, headers=headers,
                                  data=payload, timeout=60)
         response.raise_for_status()
@@ -121,7 +118,6 @@ class RestConnector:
         Get all the pending requests for Approval
         """
         response = self.get("/api/approvals")
-        print(response)
         return [EventRequest(**approval) for approval in response]
 
     def get_pending_approval_by_id(self, approval_id: str) -> EventRequest:

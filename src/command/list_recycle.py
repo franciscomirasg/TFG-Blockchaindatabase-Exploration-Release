@@ -1,4 +1,7 @@
 from typing import Any, List
+
+from rich import print
+
 from command.command import Command
 from interfaces.data_interfaces import SubjectMapList
 from interfaces.trash import RecycleOperationEvent

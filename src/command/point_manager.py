@@ -1,6 +1,10 @@
 from typing import Any, List, Union
+
+from rich import print
+
 from command.command import Command
 from interfaces.trash import PointTransaction, PointTransactionEvent
+
 
 class PointManager(Command):
     """
@@ -70,3 +74,5 @@ Transaction at: {event.timestamp}
                 if isinstance(history,str):
                     return history
                 return self.__format_wallet_history(wallet, history)
+            case _:
+                    return "Invalid option. Use help for more information"

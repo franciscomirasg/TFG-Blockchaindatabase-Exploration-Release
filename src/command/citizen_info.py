@@ -1,9 +1,11 @@
 from typing import Any, List
 
 from pydantic import ValidationError
+from rich import print
 
 from command.command import Command
-from interfaces.citizen import Citizen, Direcion, Identidad, ViaType, UPDATABLES_KEYS
+from interfaces.citizen import (UPDATABLES_KEYS, Citizen, Direcion, Identidad,
+                                ViaType)
 from utils.logs import log
 
 
@@ -171,6 +173,8 @@ Citizen:
                     return service.signup_citizen(citizen)
                 else:
                     return "Signup aborted"
+            case _:
+                return "Invalid option. Use help for more information"
 
     def __update_citizen_by_key(self, citizen:Citizen, updatable_key, new):
         match updatable_key:

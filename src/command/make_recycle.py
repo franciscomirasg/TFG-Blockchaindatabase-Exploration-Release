@@ -1,6 +1,7 @@
 from typing import Any, List
 
 from pydantic import ValidationError
+from rich import print
 
 from command.command import Command
 from interfaces.data_interfaces import CitizenHost

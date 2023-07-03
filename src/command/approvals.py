@@ -1,8 +1,10 @@
 from typing import Any, List, Union
+
+from rich import print
+
 from command.command import Command
 from interfaces.event import ApprovalType, EventRequest
 from utils.subject_factory import properties_to_object
-from rich import print
 
 
 class ApprovalsCommand(Command):
