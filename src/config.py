@@ -15,6 +15,7 @@ class GlobalSettings(BaseSettings):
     citizens_key = "citizens"
     wallet_key = "wallet"
     sign_tool = "./bin/taple-sign"
+    debug_mode = False
 
     class Config: #pylint: disable=missing-class-docstring
         env_file = ".env"
