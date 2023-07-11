@@ -83,7 +83,7 @@ Citizen:
                 if len(containers.map_list) < 1:
                     return "No citizens found"
                 print(self.__enumerate_citizens(containers))
-                container = input("Container id: ")
+                container = input("CUID: ")
                 try:
                     container = int(container)
                 except ValueError:
